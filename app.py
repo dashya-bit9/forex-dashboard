@@ -4,6 +4,7 @@ import os
 import logging 
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from dotenv import load_dotenv
+from database import init_db, save_rates
 
 load_dotenv
 
@@ -60,7 +61,9 @@ def get_forex_data():
                 "rate": round(rate, 5)
             })
 
+        save_rates(pairs)
         return pairs
+    
     except requests.exceptions.ConnectionError:
         logger.error("Failed to connect to the API, check your internet connection.")
         return []
@@ -83,4 +86,5 @@ def index():
     return render_template("index.html", pairs=pairs)
 
 if __name__ == "__main__":
+    init_db()
     app.run(debug=True)
