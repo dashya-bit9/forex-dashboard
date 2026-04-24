@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Dashboard</title>
+    <style>
+        body {
+        background-color: #1a1a2e;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+        }
+
+        table {
+            width: 60px;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+
+        th {
+            background-color: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        tr:hover {
+            background-color: #16213e;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Forex Dashboard</h1>
+    <p style="text-align: center;">Live Currency Rates</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Currency Pair</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pair in pairs %}
+            <tr>
+                <td>{{ pair.pair }}</td>
+                <td>{{ pair.rate }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
