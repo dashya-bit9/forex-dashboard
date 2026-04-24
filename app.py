@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import requests 
-from config import FOREX_API_KEY
-
+import os
+FOREX_API_KEY = os.environ.get("FOREX_API_KEY")
 app = Flask(__name__)
 
 CURRENCY_PAIRS = [
