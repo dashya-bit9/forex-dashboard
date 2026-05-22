@@ -24,6 +24,7 @@ Tech used
 How to run locally
 1. Clone the repo
 git clone https://github.com/dashya-bit9/forex-dashboard
+
 cd forex-dashboard
 
 2. Install dependencies
@@ -34,7 +35,7 @@ Create a .env file and add :
 FOREX_API_KEY=your_key_here
 
 4. Run the app
-python app.py (or python3 some people)
+python app.py (or python3 for some people)
 
 5. Open your browser and go to 'http://localhost:5000'
 
